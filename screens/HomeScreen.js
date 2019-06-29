@@ -96,10 +96,10 @@ class HomeScreen extends Component {
               )}
             </View>
           )}
-          <View>
+          <View style={styles.loveCalc}>
             <LoveCalc {...this.state} />
             {love ? (
-              <Button onClick={() => this.reset()} caption="reset" />
+              <Button style={styles.calcButton} onClick={() => this.reset()} caption="Reset" />
             ) : null}
           </View>
         </ScrollView>
@@ -129,7 +129,16 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     marginLeft: "auto",
     marginTop: theme.spacing.unit * 10
-  }
+  },
+   loveCalc: {
+     marginTop: theme.spacing.unit * 4
+   },
+   calcButton: {
+     margin:theme.spacing.unit,
+     width: '50%',
+     marginRight:'auto',
+     marginLeft: 'auto'
+   }
 });
 
 export default HomeScreen;

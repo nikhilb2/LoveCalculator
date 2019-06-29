@@ -15,7 +15,7 @@ const LoveCalc = (props) => {
         : null
       }
       {love
-        ? <Text style={styles.text}>Love: {love} </Text>
+        ? <Text style={styles.text}>Love: {love}%</Text>
         : null
       }
     </View>
