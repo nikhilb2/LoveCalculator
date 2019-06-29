@@ -12,6 +12,7 @@ import {
 import InputField from "../components/inputfield";
 import theme from "../src/theme";
 import Button from "../components/button";
+import LoveCalc from "../components/loveCalculation";
 
 class HomeScreen extends Component {
   state = {
@@ -96,10 +97,7 @@ class HomeScreen extends Component {
             </View>
           )}
           <View>
-            <Text>
-              {girlName} {boyName}{" "}
-            </Text>
-            <Text> {love} </Text>
+            <LoveCalc {...this.state} />
             {love ? (
               <Button onClick={() => this.reset()} caption="reset" />
             ) : null}
