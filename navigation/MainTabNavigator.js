@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import PrivacyPolicy from '../screens/PrivacyPolicy';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -21,7 +22,9 @@ const HomeStack = createStackNavigator(
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
-  tabBarVisible: 'false',
+  tabBarOptions: {
+  activeTintColor: '#f06297'
+},
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -29,6 +32,29 @@ HomeStack.navigationOptions = {
         Platform.OS === 'ios'
           ? 'ios-heart'
           : 'md-heart'
+      }
+    />
+  ),
+};
+const PrivacyPolicyStack = createStackNavigator(
+  {
+    PrivacyPolicy: PrivacyPolicy,
+  },
+  config
+);
+
+PrivacyPolicyStack.navigationOptions = {
+  tabBarLabel: 'Privacy Policy',
+  tabBarOptions: {
+  activeTintColor: '#f06297'
+},
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? 'ios-lock'
+          : 'md-lock'
       }
     />
   ),
@@ -69,7 +95,8 @@ SettingsStack.navigationOptions = {
 SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
-  HomeStack
+  HomeStack,
+  PrivacyPolicyStack
 });
 
 tabNavigator.path = '';

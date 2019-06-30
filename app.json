@@ -11,7 +11,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/heart.png",
+    "icon": "./assets/images/hearticon.png",
     "splash": {
       "image": "./assets/images/heart.png",
       "resizeMode": "contain",

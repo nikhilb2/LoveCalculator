@@ -109,8 +109,7 @@ class HomeScreen extends Component {
 }
 
 HomeScreen.navigationOptions = {
-  header: null,
-  tabBarVisible: false
+  header: null
 };
 
 const styles = StyleSheet.create({
